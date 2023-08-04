@@ -7,13 +7,15 @@ This code requires the following libraries:
 * [Python 3](https://www.python.org/)
 * [Pytorch](https://pytorch.org/)
 * [Huggingface Transformers](https://huggingface.co/docs/transformers/index)
-* [Huggingface Datasets]https://huggingface.co/datasets)
-* [HUggingface Accelerate](https://huggingface.co/docs/accelerate/index)
+* [Huggingface Datasets](https://huggingface.co/datasets)
+* [Huggingface Accelerate](https://huggingface.co/docs/accelerate/index)
 * [scikit-learn](https://scikit-learn.org/stable/)
 * [Numpy](https://numpy.org/)
 * [tqdm](https://tqdm.github.io/)
 
-To run, you will also need to fill in the indices and results filepaths (lines 29 and 31 in the *structured_prompting* script) as appropriate for your environment. If you want to perform structured prompting on UD datasets for POS tagging, you will need to fill the relevant information into lines 187-189 of the *utils* script.
+To run, you will also need to fill in the indices and results filepaths (lines 29 and 31 in the *structured_prompting* script) as appropriate for your environment. The *indices filepath* should point to the directory with the indices provided in this repository (note that new index mappings will need to be created for new benchmarks or UD treebanks); the *results filepath* should point to where the prompting results should be saved. 
+
+If you want to perform structured prompting on UD datasets for POS tagging, you will need to fill the relevant information into lines 187-189 of the *utils* script.
 
 You can also use OpenAI model with the OpenAI API, but you need to uncomment the import statements in the *structured_prompting* script and install the respective library. You also need to add your personal api_key to the script at line 22.
 
