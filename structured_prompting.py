@@ -249,7 +249,7 @@ def revert_bio_tags(preds, golds):
 	return reverted_preds, reverted_golds
 
 def _bio_constraints(label_space, prev_label):
-	bio_stuct = BIO_STRUCTURE['alt'] if args.alternate_bio else BIO_STRUCTURE['bio'] 
+	bio_stuct = BIO_STRUCTURE['bio'] 
 	constrained_space = []
 	for l, x in label_space:
 		#can always predict O or B- tags
@@ -642,8 +642,6 @@ def run_experiment(args, tokenizer, model, model_type):
 			out_path = '{}/{}_{}_{}_k{}_shuffle_{}_results.txt'.format(RESULTS_PATH, args.task, m, eval_split, args.k, run_id)
 		elif args.placeholder_labels: 
 			out_path = '{}/{}_{}_{}_k{}_placeholder_{}_results.txt'.format(RESULTS_PATH, args.task, m, eval_split, args.k, run_id)
-		elif args.alternate_bio:
-			out_path = '{}/{}_{}_{}_k{}_altBIO_{}_results.txt'.format(RESULTS_PATH, args.task, m, eval_split, args.k, run_id)
 		elif args.words_as_labels:
 			out_path = '{}/{}_{}_{}_k{}_words_{}_results.txt'.format(RESULTS_PATH, args.task, m, eval_split, args.k, run_id)
 		else:	
@@ -733,9 +731,6 @@ if __name__ == "__main__":
 	)
 	parser.add_argument(
 	    "--words_as_labels", action='store_true'
-	)
-	parser.add_argument(
-	    "--alternate_bio", action='store_true'
 	)
 	parser.add_argument(
 	    "--tags_only", action='store_true'
