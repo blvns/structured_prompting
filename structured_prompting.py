@@ -16,9 +16,10 @@ import pickle
 
 from pathlib import Path
 
-import openai
+#Uncomment to use openai models
+#import openai
 #Fill in with your token to use OpenAI model
-openai.api_key = None
+#openai.api_key = None
 import time #sleeping to handle rate limits
 import copy
 
@@ -31,8 +32,7 @@ INDICES_PATH = None
 
 DELIMS = { 'slash': '/', 'colon': ':', 'dash': '-', 'underscore': '_', 'equals': '=', 'space': ' '}
 BIO_STRUCTURE ={
-	'bio': ['O', 'B', 'I'],
-	'alt': []
+	'bio': ['O', 'B', 'I']
 }
 
 PLACEHOLDERS = {
