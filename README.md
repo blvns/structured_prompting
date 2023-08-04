@@ -1,4 +1,4 @@
-# Codebase for the ACL 2023 "Prompting Language Models for Linguistic Structure"
+# Codebase for "Prompting Language Models for Linguistic Structure"
 
 This codebase contains the code used to implement the structured prompting method proposed in our ACL 2023 paper. 
 
